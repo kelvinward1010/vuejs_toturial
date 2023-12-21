@@ -16,6 +16,14 @@
 </template>
 
 <style scoped>
+.greetings{
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 h1 {
   font-weight: 500;
   font-size: 2.6rem;
