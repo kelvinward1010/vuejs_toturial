@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Button, Form, Input, FormItem, InputPassword, TypographyTitle } from 'ant-design-vue';
+import router from '@/router';
+import {  createRouter } from "vue-router"
 
 const username = ref('')
 const password = ref('')
@@ -16,10 +18,15 @@ const layout = {
   wrapperCol: { span: 14 },
 };
 
+
+
 const onFinish = () => {
     const data = {
         username: username.value,
         password: password.value,
+    }
+    if(data.username != '' && data.password != '') {
+        router.push({name: "home"})
     }
     console.log(data)
 }
@@ -28,7 +35,7 @@ const onFinish = () => {
 
 <template>
     <div class="item_signup">
-        <TypographyTitle class="title_signup" :level="2">Sign Up</TypographyTitle>
+        <TypographyTitle class="title_signup" :level="2">Sign In</TypographyTitle>
         <Form 
             :labelCol="layout.labelCol"
             :wrapperCol="layout.wrapperCol"

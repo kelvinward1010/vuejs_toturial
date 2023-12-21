@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { Button, Form, Input, FormItem, InputPassword, TypographyTitle } from 'ant-design-vue';
 import { RouterLink } from 'vue-router'
+import router from '@/router';
 
 const username = ref('')
 const password = ref('')
@@ -41,6 +42,9 @@ const onFinish = () => {
         username: username.value,
         password: password.value,
         confirmpassword: confirmpassword.value
+    }
+    if(data.username != '' && data.password != '' && data.confirmpassword != '' && data.confirmpassword === data.password) {
+        router.push({name: "signin"})
     }
     console.log(data)
 }
