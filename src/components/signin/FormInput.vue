@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Button, Form, Input, FormItem, InputPassword, TypographyTitle } from 'ant-design-vue';
-import { RouterLink } from 'vue-router'
 
 const username = ref('')
 const password = ref('')
-const confirmpassword = ref('')
 
-let messageFetBack = ''
 
 const wrapperCol = {
     offset: 10, 
@@ -19,28 +16,10 @@ const layout = {
   wrapperCol: { span: 14 },
 };
 
-const checkpassword = () => {
-    const data = {
-        username: username.value,
-        password: password.value,
-        confirmpassword: confirmpassword.value
-    }
-    if(data.password != data.confirmpassword && data.confirmpassword != ''){
-        return messageFetBack = "Confirm password wrong! Please try again!"
-    }else if(data.confirmpassword === '' && data.password != ''){
-        return messageFetBack = "Please confirm your password!"
-    }else if(data.password === data.confirmpassword && data.confirmpassword != ''){
-        return messageFetBack = 'Password is correct!'
-    }else{
-        return messageFetBack = ''
-    }
-}
-
 const onFinish = () => {
     const data = {
         username: username.value,
         password: password.value,
-        confirmpassword: confirmpassword.value
     }
     console.log(data)
 }
@@ -69,22 +48,16 @@ const onFinish = () => {
             >
                 <InputPassword v-model:value="password" />
             </FormItem>
-            <FormItem 
-                label="Confirm Password" 
-                name="confirmpassword" 
-            >
-                <InputPassword v-model:value="confirmpassword"/>
-            </FormItem>
-            <p class="fetback">{{ checkpassword() }}</p>
             <FormItem :wrapperCol="wrapperCol">
                 <Button type="primary" @click="onFinish" htmlType="submit">
                     Submit
                 </Button>
             </FormItem>
         </Form>
+
         <div class="footer">
-            <span>Have a account!</span>
-            <RouterLink to="/signin">Sign In</RouterLink>
+            <span>Don't have a account!</span>
+            <RouterLink to="/signup">Sign Up</RouterLink>
         </div>
     </div>
 </template>
@@ -118,4 +91,5 @@ const onFinish = () => {
   width: fit-content;
   font-size: 12px;
 }
+
 </style>
