@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Button, Form, Input, FormItem, InputPassword, TypographyTitle } from 'ant-design-vue';
-import { RouterLink } from 'vue-router'
+import { RouterLink } from 'vue-router';
 import router from '@/router';
 
 const username = ref('')

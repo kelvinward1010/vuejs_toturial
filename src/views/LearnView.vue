@@ -1,6 +1,11 @@
+<script setup lang="ts">
+import LearnVue from "@/components/learn/LearnVue.vue"
+</script>
+
+
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <LearnVue />
   </div>
 </template>
 

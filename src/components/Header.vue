@@ -6,6 +6,7 @@ import { RouterLink } from 'vue-router'
     <div class="container">
         <div class="left">
             <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="50" height="50" />
+            <h4>VueJS 3</h4>
         </div>
         <div class="center">
             <nav>
@@ -29,6 +30,16 @@ import { RouterLink } from 'vue-router'
   display: flex;
   justify-content: space-between;
   padding: 10px;
+}
+
+.left{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.left h4{
+    margin-left: 10px;
 }
 
 .logo {
