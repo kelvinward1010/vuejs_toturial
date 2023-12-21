@@ -32,7 +32,7 @@ const onFinish = () => {
         <Form 
             :labelCol="layout.labelCol"
             :wrapperCol="layout.wrapperCol"
-            name="formsignup" 
+            name="formsignin" 
             @onFinish="onFinish"
         >
             <FormItem 
