@@ -39,11 +39,11 @@ function addChild() {
             <span v-if="isFolder">[{{ isOpen ? '-' : '+' }}]</span>
         </div>
         <ul v-show="isOpen" v-if="isFolder">
-        <TreeItem
+        <!-- <TreeItem
             class="item"
-            
+            v-for="model in model?.children"
             :model="model">
-        </TreeItem>
+        </TreeItem> -->
         <li class="add" @click="addChild">+</li>
         </ul>
     </li>
