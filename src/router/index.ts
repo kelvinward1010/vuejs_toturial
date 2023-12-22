@@ -4,6 +4,7 @@ import LearnViewVue from '@/views/LearnView.vue'
 import SignUpViewVue from '@/views/SignUpView.vue'
 import LayoutVue from '@/views/Layout.vue'
 import SignInViewVue from '@/views/SignInView.vue'
+import ExamplesViewVue from '@/views/ExamplesView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +23,11 @@ const router = createRouter({
           path: '/learn',
           name: 'learn',
           component: LearnViewVue
+        },
+        {
+          path: '/examples',
+          name: 'examples',
+          component: ExamplesViewVue
         },
       ]
     },
